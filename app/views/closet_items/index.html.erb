@@ -1,0 +1,23 @@
+<h1>Listing closet_items</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @closet_items.each do |closet_item| %>
+  <tr>
+    <td><%= closet_item.name %></td>
+    <td><%= link_to 'Show', closet_item %></td>
+    <td><%= link_to 'Edit', edit_closet_item_path(closet_item) %></td>
+    <td><%= link_to 'Destroy', closet_item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Closet item', new_closet_item_path %>

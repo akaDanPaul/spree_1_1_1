@@ -1,0 +1,30 @@
+<div id="google_base_map">
+  <h1>Google Base Taxonomy Mapping</h1>
+  <a href="http://www.google.com/support/merchants/bin/answer.py?hl=en&answer=160081" target="_blank">Google Taxonomy Listings</a>
+
+  <%= form_for :taxon_maper do |f| %>
+    <table border="0" cellspacing="0" cellpadding="0" class="index">
+      <thead>
+        <tr>
+          <th class="taxon_head">Taxon</th>
+          <th class="priority_head">Priority</th>
+          <th class="category_head">Category</th>
+        </tr>
+      </thead>
+      <% @taxons.each do |taxon| -%>
+        <%= fields_for "taxon_map[]", taxon.taxon_map do |builder| %>
+          <tr>
+            <td class="taxon"><label><%= taxon.name %></label></td>
+            <td class="priority">
+              <%= builder.text_field(:priority, :class => 'priority') %>
+            </td>
+            <td class="category">
+              <%= builder.text_field(:product_type, :class => 'category') %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+    <%= submit_tag 'Update' %>
+  <% end %>
+</div>

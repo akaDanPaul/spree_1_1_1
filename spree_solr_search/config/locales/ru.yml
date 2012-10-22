@@ -1,0 +1,7 @@
+ru:
+  taxon_names_facet: "Категория"
+  price_range_facet: "Цена"
+  brand_property_facet: "Бренд"
+  color_option_facet: "Цвет"
+  size_option_facet: "Размер"
+  price_and_above: "%{price} руб. и выше"
